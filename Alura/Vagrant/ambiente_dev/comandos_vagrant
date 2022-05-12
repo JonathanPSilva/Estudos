@@ -1,0 +1,20 @@
+# Cria um Vagrantfile onde nele configuramos as VM para subir Ex:
+vagrant init hashicorp/precise64
+
+# Subir VM
+vagrant up
+
+# Verificar o estado da VM
+vagrant status 
+
+# Parar VM
+vagrant halt
+
+# Destruir VMs
+vagrant destroy
+
+# Acessar VM Via SSH pelo Vagrant
+vagrant SSH
+
+# Ver config SSH no Vagrant
+vagrant ssh-config

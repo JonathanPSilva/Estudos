@@ -1,0 +1,5 @@
+# ignorando Diretorio 
+.vagrant
+
+# ignorando Arquivos
+*.log
