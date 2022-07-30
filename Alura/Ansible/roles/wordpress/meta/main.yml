@@ -1,0 +1,4 @@
+---
+# Previnindo para que a role wordpress dependa de uma webserver
+dependencies:
+  - webserver

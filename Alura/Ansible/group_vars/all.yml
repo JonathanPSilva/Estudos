@@ -1,0 +1,7 @@
+---
+wp_host_ip: '172.17.177.40' # IP do Servidor
+wp_db_ip: '172.17.177.42'   # IP do Banco
+wp_db_name: wordpress_db
+wp_db_user_name: wordpress_user
+wp_db_user_pass: 12345
+wp_workdir: '/var/www/wordpress'
