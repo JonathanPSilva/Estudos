@@ -1,0 +1,73 @@
+#####################
+#### Docker Swarm
+#############
+
+# Iniciando um Swarm
+docker swarm init
+
+# Adiconando um node ao cluster swarm
+docker join-token ******
+
+# Removendo Varios Servicos
+docker service rm $(docker service ls -q)
+
+# Criando um Servico
+docker service create -p 8080:3000 repositorio/imagen
+
+#Ver nos no Swarm
+docker node ls 
+
+
+#######3
+# Mudando o estado de um node
+######
+
+# Restringindo um node especifico de executar um servico (darin e o status)
+docker node update --availability darin `nome do node`
+
+# Voltar para o estado para ativo
+docker node update --availability active `nome do node`
+
+# Restringindo um servico para rodar apenas nos workers
+docker service update --constraint-add node.role==worker `id do servico`
+
+# Restringindo um servico com id ci10k3u7q6ti para rodar apenas em um workers expecifico com id t76gee19fjs8
+docker service update --constraint-add node.id==t76gee19fjs8 ci10k3u7q6ti
+
+# Restringindo um servico para rodar apenas em um workers expecifico com nome vm4
+docker service update --constraint-add node.hostname==vm4 ci10k3u7q6ti
+
+# Removendo as restricoes acima
+docker service update --constraint-rm node.id==t76gee19fjs8 ci10k3u7q6ti
+docker service update --constraint-rm node.hostname==vm4 ci10k3u7q6ti
+
+#Aumentando numero de replicas de um servico
+docker service update --replicas 4 `id do servico`
+		OU
+docker service scale `id do servico`=4 
+
+#Criando um servico em modo global (todos os nos terao 1 replicada desse servico) ex: 5 nos = 5 replicas. 
+docker service create -p 8000:3000 --mode global repositorio/imagem
+
+
+# Por padrao o docker criar um rede ingress com drive overley porem nela n e possivel acessar
+uma maquina via nome somente por ip para resolver isso criamos uma rede e atachamos elas nos novos servicoes que vamos criar
+docker network create -d  overlay `minha_rede`
+docker service create --nome meu_servico --network minha_rede alpine sh sleep 1d
+
+# Fazendo um deploy de uma stack com docker compose (equivalente ao docker-compose up -d) quando n usamos swarm
+docker stack deploy --compose-file docker-compose.yml `nome da stack`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
