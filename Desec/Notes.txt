@@ -1,0 +1,23 @@
+# Dicas
+# Com o comandos script tudo que vc digitar no terminal após dar enter no comandos é jogado para um arquivo chamado d1-mapear-hosts
+script d1-mapear-hosts
+
+# MAPEANDO HOSTS
+
+# RND:20 -> Cria end ip Randomicos
+# sS SYN SCAN
+nmap -D RND:20 --open -sS --top-ports=100 urlAqui.com -oN portas-abertas.txt
+
+# Versão dos serviços encontrados em cada porta
+nmap--open -sV -p80,2121 urlAqui.com -oN portas-abertas.txt
+
+# Enumerando dir url 
+gobuster dir -u http://urlAqui.com -w /usr/share/dirb/wordlists/big.txt -t 100 -e --no-error -r -o gobuster.txt
+
+-t 100 usa 100 Threads
+-e opção extendida retorna url completa 
+--no-error não retornar erro na tela
+-r para seguir redirecionamentos
+
+
+# 
