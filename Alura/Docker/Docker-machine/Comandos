@@ -1,0 +1,8 @@
+# Criando maquina virtual usando VirtualBox como provisionador
+docker-machine create -d virtualbox vm1
+
+# Iniciando Maquina virtual
+docker-machine start vm1
+
+# Acessando maquina via SSH
+docker-machine ssh vm1
