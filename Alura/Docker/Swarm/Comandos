@@ -58,20 +58,12 @@ docker service create --name nome_meu_servico --network minha_rede alpine sh sle
 # Fazendo um deploy de uma stack com docker compose (equivalente ao docker-compose up -d) quando usamos Docker Standalone
 docker stack deploy --compose-file docker-compose.yml `nome da stack`
 
-# Recriando cluster atravez do backup feito da pasta /var/lib/docker/swarm/
-1) Apos copiar seu bkp para a pasta /var/lib/docker/swarm/
-2) docker init --force-new-cluster --advertise-addr seu_ip_do_master_aqui
+# Recriando Swarm
+# Fazer Backup dos arquivo do Swarm
+1) tar czvf docker_swarm_bkp_2023-05-01.tar.gz /var/lib/docker/swarm/
 
+2) Remover todos os outros workers com 'docker swarm leave' e no manager rodar o comando abaixo.
+docker swarm leave --force
 
-
-
-
-
-
-
-
-
-
-
-
-
+3) Copiar os arquivos de volta para o diretório /var/lib/docker/swarm/ e rodar o comando abaixo
+docker swarm init --force-new-cluster --advertise-addr seu_ip_do_master_aqui
