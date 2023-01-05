@@ -53,9 +53,9 @@ docker service create -p 8000:3000 --mode global repositorio/imagem
 # Por padrao o docker criar um rede ingress com drive overley porem nela n e possivel acessar
 uma maquina via nome somente por ip para resolver isso criamos uma rede e atachamos elas nos novos servicoes que vamos criar
 docker network create -d  overlay `minha_rede`
-docker service create --nome meu_servico --network minha_rede alpine sh sleep 1d
+docker service create --name nome_meu_servico --network minha_rede alpine sh sleep 1d
 
-# Fazendo um deploy de uma stack com docker compose (equivalente ao docker-compose up -d) quando n usamos swarm
+# Fazendo um deploy de uma stack com docker compose (equivalente ao docker-compose up -d) quando usamos Docker Standalone
 docker stack deploy --compose-file docker-compose.yml `nome da stack`
 
 # Recriando cluster atravez do backup feito da pasta /var/lib/docker/swarm/
