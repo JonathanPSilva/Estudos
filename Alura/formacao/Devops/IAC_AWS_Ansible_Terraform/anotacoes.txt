@@ -1,0 +1,8 @@
+# Depois de criar o arquivo. Ele vai baixar os modulos para comunicação com a AWS
+terraform init
+
+# Mostra o que sera feito baseado no arquivo main.tf porem sem realmente criar a instancia
+terraform plan
+
+# Para criar a instancia
+terraform apply

