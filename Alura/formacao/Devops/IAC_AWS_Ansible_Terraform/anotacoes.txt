@@ -1,8 +1,15 @@
-# Depois de criar o arquivo. Ele vai baixar os modulos para comunicação com a AWS
+# Apos ter criado o arquivo main.tf com uma config basica para subir uma maquina
+# Iniciando o Terraform com o comando abaixo. Vai baixar algumas dependencia, baixar os modulos para comunicação com a AWS ou o provedor que você passou no arquivo,
+# e criar o arquivo .terraform.lock.hcl!
+# Se tiver dado tudo certo irá aparecer a mensagem "Terraform has been successfully initialized!"
 terraform init
 
 # Mostra o que sera feito baseado no arquivo main.tf porem sem realmente criar a instancia
 terraform plan
 
-# Para criar a instancia
+# Aplicando a configuração/Criando a instãncia
 terraform apply
+    yes
+
+# Para destruir a infraestrutura criada.
+terraform destroy -force

@@ -33,3 +33,14 @@ echo "[+] $(python3 --version)"
 echo "[+] $(ansible --version | head -n1)"
 echo "[+] $(aws --version)"
 echo " -------------------------------------"
+
+# Apos ter criado o arquivo main.tf com uma config basica para subir uma maquina
+# Iniciando o Terraform. Vai baixar algumas dependencia e criar o arquivo .terraform.lock.hcl!
+# Se tiver dado tudo certo irá aparecer a mensagem Terraform has been successfully initialized!
+terraform init
+
+# Ver o plano do terraform (Não cria a maquina. Apernas te mostra no terminal o que será feito)
+terraform plan
+
+# Aplicando a configuração/Criando a instancia
+#terraform apply

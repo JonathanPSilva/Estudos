@@ -1,13 +1,25 @@
 terraform {
-    # Configurando o provedor que vamos utilizar.
-    required_providers {
-      aws = {
-        source  = "hashicorp/aws"
-        version = "~> 3.27"
-      }
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.16"
     }
+  }
     
-  required_version = ">= 0.14.9"
+  required_version = ">= 1.2.0"
+}
+
+provider "aws" {
+  region  = "us-east-1"
+}
+
+resource "aws_instance" "app_server" {
+  ami           = "ami-0b5eea76982371e91"
+  instance_type = "t1.micro"
+
+  tags = {
+    Name = "Teste_Terraform"
+  }
 }
 
 
