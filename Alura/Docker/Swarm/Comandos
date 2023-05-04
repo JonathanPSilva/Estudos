@@ -8,25 +8,58 @@ docker swarm init
 # Adiconando um node ao cluster swarm
 docker join-token ******
 
-# Removendo Varios Servicos
-docker service rm $(docker service ls -q)
+#Ver nos no Swarm
+docker node ls 
+
+########################################################################
+## Gerenciando Swarm - Managers e Nodes
+#################
+
+# Mudando o estado de um node
+# Restringindo um node especifico de executar um servico (darin e o status)
+docker node update --availability darin `nome do node`
+
+# Voltar para o estado ativo
+docker node update --availability active `nome do node`
+
+# Removendo node
+# 1) rodar em um manager: 
+docker node update --availability darin `nome ou id do node que será removido`
+
+# 2) rodar no node:
+docker swarm leave
+
+# 3) rodar em um manager:
+docker node rm `nome ou id do node que será removido`
+
+
+########################################################################
+## Gerenciando Stacks - docker stack
+#################
+# Fazendo um deploy de uma stack com docker compose (equivalente ao docker-compose up -d) quando usamos Docker Standalone
+docker stack deploy --compose-file docker-compose.yml `nome da stack`
+
+# Verificando Serviços
+docker stack ls
+
+# Verificando Serviços de uma stack especifica
+docker stack services 'nome da stack'
+
+# Por padrao o docker criar um rede ingress com drive overley porem nela n e possivel acessar
+# uma maquina via nome, somente por ip, para resolver isso criamos uma rede e atachamos elas nos novos servicoes que vamos criar
+docker network create -d  overlay `minha_rede`
+docker service create --name nome_meu_servico --network minha_rede alpine sh sleep 1d
+
+
+########################################################################
+## Gerenciando Serviços
+#################
 
 # Criando um Servico
 docker service create -p 8080:3000 repositorio/imagen
 
-#Ver nos no Swarm
-docker node ls 
-
-
-#######3
-# Mudando o estado de um node
-######
-
-# Restringindo um node especifico de executar um servico (darin e o status)
-docker node update --availability darin `nome do node`
-
-# Voltar para o estado para ativo
-docker node update --availability active `nome do node`
+# Removendo Varios Servicos
+docker service rm $(docker service ls -q)
 
 # Restringindo um servico para rodar apenas nos workers
 docker service update --constraint-add node.role==worker `id do servico`
@@ -50,20 +83,17 @@ docker service scale `id do servico`=4
 docker service create -p 8000:3000 --mode global repositorio/imagem
 
 
-# Por padrao o docker criar um rede ingress com drive overley porem nela n e possivel acessar
-uma maquina via nome somente por ip para resolver isso criamos uma rede e atachamos elas nos novos servicoes que vamos criar
-docker network create -d  overlay `minha_rede`
-docker service create --name nome_meu_servico --network minha_rede alpine sh sleep 1d
 
-# Fazendo um deploy de uma stack com docker compose (equivalente ao docker-compose up -d) quando usamos Docker Standalone
-docker stack deploy --compose-file docker-compose.yml `nome da stack`
 
-# Recriando Swarm
-# Fazer Backup dos arquivo do Swarm
-1) tar czvf docker_swarm_bkp_2023-05-01.tar.gz /var/lib/docker/swarm/
 
-2) Remover todos os outros workers com 'docker swarm leave' e no manager rodar o comando abaixo.
+########################################################################
+## Recriando Swarm
+#################
+# Necessário ter o Backup dos arquivo do Swarm
+#tar czvf docker_swarm_bkp_2023-05-01.tar.gz /var/lib/docker/swarm/
+
+#1) Remover todos os outros workers com 'docker swarm leave' e no manager rodar o comando abaixo:
 docker swarm leave --force
 
-3) Copiar os arquivos de volta para o diretório /var/lib/docker/swarm/ e rodar o comando abaixo
+# 2) Copiar os arquivos de volta para o diretório /var/lib/docker/swarm/ e rodar o comando:
 docker swarm init --force-new-cluster --advertise-addr seu_ip_do_master_aqui
