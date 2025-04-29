@@ -56,6 +56,14 @@ eval "$(ssh-agent -s)"
 ```bash
 ssh-add ~/.ssh/suaChavePrivDoGitHub
 ```
-6. 
-
+6. Configure seu arquivo `~/.ssh/config`
+```bash
+Host github.com
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_ed25519   # Sua chave do GitHub
+  AddKeysToAgent yes
+  UseKeychain yes  # Apenas se utilizar macOS
+```
+7. Abra novamente o Obsidian e tente novamente.
 #obsidian-git #git
