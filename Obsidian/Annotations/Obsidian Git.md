@@ -33,4 +33,29 @@ Recebendo essa mensagem anterior agora é só clonar seu repositório com a opç
 ```bash
 git clone git@github.com:SeuUsuario/Repositorio.git
 ```
+
+## Problemas
+
+Mesmo seguindo o procedimento e funcionando via Terminal o Obsidian reclamou algumas vezes de Permission Denied. Caso tenha esse problema seguir os proximos passos para tentar resolver.
+
+1. Feche o Obsidian.
+2. Configure Git user.name:
+```bash
+git config user.name "Seu nome aqui"
+```
+
+3. Configure Git user.email:
+```bash
+git config user.email "seuEmail@aqui"
+```
+4. Certifique-se de que o ssh-agent esta rodando.
+```bash
+eval "$(ssh-agent -s)"
+```
+5. Certifique-se de que a chave ssh correta foi adicionar ao ssh-agent:
+```bash
+ssh-add ~/.ssh/suaChavePrivDoGitHub
+```
+6. 
+
 #obsidian-git #git
