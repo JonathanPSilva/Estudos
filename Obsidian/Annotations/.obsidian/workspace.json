@@ -1,0 +1,222 @@
+{
+  "main": {
+    "id": "7b9891ecbc338741",
+    "type": "split",
+    "children": [
+      {
+        "id": "1135a21668459e50",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "affb400f2e8e8b8a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Configurando Obsidian.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Configurando Obsidian"
+            }
+          },
+          {
+            "id": "dbc664c66bcb8cfc",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Configurando Obsidian.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Configurando Obsidian"
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "1f7b6b4fb25bec43",
+    "type": "split",
+    "children": [
+      {
+        "id": "8bfa86c0645f1c9d",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "81829d2ff85e86ec",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "83a995a84ebe133b",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "03736e2328f6889b",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 223.5
+  },
+  "right": {
+    "id": "3333e7be2905a095",
+    "type": "split",
+    "children": [
+      {
+        "id": "31ba87f6b20181a9",
+        "type": "tabs",
+        "dimension": 32.71604938271605,
+        "children": [
+          {
+            "id": "bdb52ca3084a54aa",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Configurando Obsidian.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for Configurando Obsidian"
+            }
+          },
+          {
+            "id": "bf9811f033511e09",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Configurando Obsidian.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of Configurando Obsidian"
+            }
+          },
+          {
+            "id": "b307a570c2330f80",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          }
+        ],
+        "currentTab": 1
+      },
+      {
+        "id": "17b3b1ab26b53f4b",
+        "type": "tabs",
+        "dimension": 24.691358024691358,
+        "children": [
+          {
+            "id": "d7e8137559cd6ee0",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Configurando Obsidian.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from Configurando Obsidian"
+            }
+          }
+        ]
+      },
+      {
+        "id": "ad3e9a0ef2ee3f7d",
+        "type": "tabs",
+        "dimension": 42.592592592592595,
+        "children": [
+          {
+            "id": "5c7512c4eac89c8c",
+            "type": "leaf",
+            "state": {
+              "type": "calendar",
+              "state": {},
+              "icon": "calendar-with-checkmark",
+              "title": "Calendar"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "dbc664c66bcb8cfc",
+  "lastOpenFiles": [
+    "Obsidian Git.md",
+    "Configurando Obsidian.md",
+    "daily/2025-04-29.md",
+    "Untitled.md",
+    "Daily note.md",
+    "daily",
+    "Welcome.md",
+    "Configurando-Obsidian"
+  ]
+}
