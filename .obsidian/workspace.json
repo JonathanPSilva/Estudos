@@ -1,14 +1,14 @@
 {
   "main": {
-    "id": "84b9459d6cb69498",
+    "id": "e59733916b2e0a33",
     "type": "split",
     "children": [
       {
-        "id": "aed1578dcdda2fb5",
+        "id": "f0e54927e178dca7",
         "type": "tabs",
         "children": [
           {
-            "id": "471edb04cc50fdea",
+            "id": "c44f7d9e6739c8cd",
             "type": "leaf",
             "state": {
               "type": "empty",
@@ -18,20 +18,36 @@
             }
           }
         ]
+      },
+      {
+        "id": "4e2215f002c3e209",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "826a651ada802598",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {},
+              "icon": "lucide-git-fork",
+              "title": "Graph view"
+            }
+          }
+        ]
       }
     ],
     "direction": "vertical"
   },
   "left": {
-    "id": "d6b567a38edce812",
+    "id": "6aa10c2b1faec4f9",
     "type": "split",
     "children": [
       {
-        "id": "714c45c796fbe653",
+        "id": "f23752b59e608467",
         "type": "tabs",
         "children": [
           {
-            "id": "2409c01cccf60d99",
+            "id": "106b69fe72aa2a09",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
@@ -44,7 +60,7 @@
             }
           },
           {
-            "id": "47a857024b639f72",
+            "id": "fa27db4a38921493",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -61,7 +77,7 @@
             }
           },
           {
-            "id": "0dc7ba8381c224a8",
+            "id": "58a806606eb87bc8",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -77,16 +93,15 @@
     "width": 300
   },
   "right": {
-    "id": "6bb34a0fb78b8d7d",
+    "id": "0d3195769606f594",
     "type": "split",
     "children": [
       {
-        "id": "281f8eecbe3e2c6f",
+        "id": "3e687d37fa9eca2a",
         "type": "tabs",
-        "dimension": 72.87644787644788,
         "children": [
           {
-            "id": "f17c82bf0584c424",
+            "id": "a1ed333b60b60683",
             "type": "leaf",
             "state": {
               "type": "backlink",
@@ -104,7 +119,7 @@
             }
           },
           {
-            "id": "30938263d86d3085",
+            "id": "59782381970103f9",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
@@ -117,7 +132,7 @@
             }
           },
           {
-            "id": "de3dce96cec2ce1d",
+            "id": "7759ae8f0bcff35f",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -132,7 +147,7 @@
             }
           },
           {
-            "id": "535f851e8947bd7d",
+            "id": "8598fe0c700261eb",
             "type": "leaf",
             "state": {
               "type": "outline",
@@ -146,25 +161,7 @@
             }
           },
           {
-            "id": "5fa93748a576e6de",
-            "type": "leaf",
-            "state": {
-              "type": "git-view",
-              "state": {},
-              "icon": "git-pull-request",
-              "title": "Source Control"
-            }
-          }
-        ],
-        "currentTab": 4
-      },
-      {
-        "id": "c2327329a9b29b4d",
-        "type": "tabs",
-        "dimension": 27.123552123552123,
-        "children": [
-          {
-            "id": "5eecd7633058077f",
+            "id": "507b7fe7dbbb7e26",
             "type": "leaf",
             "state": {
               "type": "calendar",
@@ -177,7 +174,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 420.5
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -190,12 +188,30 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "471edb04cc50fdea",
+  "active": "c44f7d9e6739c8cd",
   "lastOpenFiles": [
-    "Obsidian/Annotations/Obsidian & Git.md",
-    "Obsidian/Annotations/Daily note.md",
-    "Obsidian/Annotations/Configurando Obsidian.md",
+    "README.md",
+    "Estudar.md",
     "Obsidian/Annotations/daily/2025-04-29.md",
-    "Estudar.md"
+    "Obsidian/Annotations/Daily note.md",
+    "Obsidian/Annotations/Obsidian & Git.md",
+    "Obsidian/Annotations/daily",
+    "Obsidian/Annotations/Configurando Obsidian.md",
+    "Obsidian/Annotations",
+    "Obsidian",
+    "Desec/Notes.txt",
+    "Desec/Desec_notes.txt",
+    "Desec",
+    "Alura/Ansible/roles/wordpress/tasks/main.yml",
+    "Alura/Ansible/roles/wordpress/meta/main.yml",
+    "Alura/Ansible/roles/mysql/tasks/main.yml",
+    "Alura/Ansible/roles/webserver/templates/000-default.conf.j2",
+    "Estudos/README.md",
+    "Estudos/Obsidian/Annotations/daily/2025-04-29.md",
+    "Estudos/Obsidian/Annotations/Daily note.md",
+    "Estudos/Obsidian/Annotations/Obsidian & Git.md",
+    "Estudos/Obsidian/Annotations/Configurando Obsidian.md",
+    "Estudos/Estudar.md",
+    "Welcome.md"
   ]
 }
