@@ -6,15 +6,20 @@
       {
         "id": "f0e54927e178dca7",
         "type": "tabs",
+        "dimension": 55.32994923857868,
         "children": [
           {
             "id": "c44f7d9e6739c8cd",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/Oracle Cloud Infrastructure Foundation Certification Course.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "New tab"
+              "title": "Oracle Cloud Infrastructure Foundation Certification Course"
             }
           }
         ]
@@ -22,15 +27,20 @@
       {
         "id": "4e2215f002c3e209",
         "type": "tabs",
+        "dimension": 44.67005076142132,
         "children": [
           {
             "id": "826a651ada802598",
             "type": "leaf",
             "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Graph view"
+              "type": "markdown",
+              "state": {
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "README"
             }
           }
         ]
@@ -184,28 +194,41 @@
       "canvas:Create new canvas": false,
       "daily-notes:Open today's daily note": false,
       "templates:Insert template": false,
-      "command-palette:Open command palette": false,
-      "obsidian-git:Open Git source control": false
+      "command-palette:Open command palette": false
     }
   },
-  "active": "c44f7d9e6739c8cd",
+  "active": "106b69fe72aa2a09",
   "lastOpenFiles": [
-    "README.md",
     "Estudar.md",
-    "Obsidian/Annotations/daily/2025-04-29.md",
-    "Obsidian/Annotations/Daily note.md",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/Oracle Cloud Infrastructure Foundation Certification Course.md",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/3/assets/5.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/3/assets/3.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/3/assets/4.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/3/assets/2.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/3/assets/1.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/3/Network.md",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/3/assets",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/3",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/2/assets/foto4.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/2/assets/foto3.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/2/assets/foto5.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/2/assets/foto1.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/2/assets/foto2.png",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/2/Identity and Access Management.md",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/2/assets",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/2",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/1/OCI Introduction.md",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/1/assets",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck/1",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/assets",
+    "README.md",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course",
+    "Oracle Cloud",
     "Obsidian/Annotations/Obsidian & Git.md",
-    "Obsidian/Annotations/daily",
+    "Oracle Cloud/Oracle Cloud Infrastructure Foundation Certification Course/SkillCheck",
+    "Obsidian/Annotations/Daily note.md",
     "Obsidian/Annotations/Configurando Obsidian.md",
-    "Obsidian/Annotations",
-    "Obsidian",
-    "Desec/Notes.txt",
-    "Desec/Desec_notes.txt",
-    "Desec",
-    "Alura/Ansible/roles/wordpress/tasks/main.yml",
-    "Alura/Ansible/roles/wordpress/meta/main.yml",
-    "Alura/Ansible/roles/mysql/tasks/main.yml",
-    "Alura/Ansible/roles/webserver/templates/000-default.conf.j2",
+    "Obsidian/Annotations/daily/2025-04-29.md",
     "Estudos/README.md",
     "Estudos/Obsidian/Annotations/daily/2025-04-29.md",
     "Estudos/Obsidian/Annotations/Daily note.md",
